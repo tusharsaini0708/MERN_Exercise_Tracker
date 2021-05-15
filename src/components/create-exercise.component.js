@@ -52,7 +52,7 @@ class CreateExercise extends Component {
     });
   };
 
-  onSubmit = (e) => {
+  onSubmit = async (e) => {
     e.preventDefault();
     const exercise = {
       username: this.state.username,
@@ -61,7 +61,7 @@ class CreateExercise extends Component {
       date: this.state.date,
     };
 
-    axios
+    await axios
       .post("http://localhost:5000/exercises/add", exercise)
       .then((res) => console.log(res.data));
 

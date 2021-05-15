@@ -68,7 +68,7 @@ class EditExercise extends Component {
     });
   };
 
-  onSubmit = (e) => {
+  onSubmit = async (e) => {
     e.preventDefault();
 
     const exercise = {
@@ -78,7 +78,7 @@ class EditExercise extends Component {
       date: this.state.date,
     };
 
-    axios
+    await axios
       .post(
         "http://localhost:5000/exercises/update/" + this.props.match.params.id,
         exercise
